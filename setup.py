@@ -6,13 +6,14 @@ import sys
 from Cython.Build import cythonize
 from setuptools import setup, Extension
 
-this_dir = os.path.dirname(__file__)
-
 
 def get_args():
+    this_dir = os.path.dirname(__file__)
+    default_srilm_dir = os.path.join(this_dir, "../")
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--srilm-option", default="")
-    parser.add_argument("--srilm", default=os.path.join(this_dir, "../"), help="Location of SRILM directory")
+    parser.add_argument("--srilm", default=default_srilm_dir, help="Location of SRILM directory")
     parser.add_argument("--lbfgs", default=None, help="Location of liblbfgs directory")
     args, copy_args = parser.parse_known_args()
     return args, copy_args
