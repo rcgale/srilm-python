@@ -25,7 +25,7 @@ def main():
     try:
         setup(
             name="srilm",
-            version="3.0.0",
+            version="3.0.1",
             description="Python binding for SRI Language Modeling Toolkit implemented in Cython",
             author="Yi Su",
             author_email="nuance1979@hotmail.com",
